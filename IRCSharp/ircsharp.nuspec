@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-16"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>IRCSharp</id>
+        <version>$version$</version>
+        <title>IRCSharp</title>
+        <authors>Uncled1023</authors>
+        <owners>Uncled1023</owners>
+        <licenseUrl>https://git.teknik.io/Uncled1023/IRCSharp/src/master/LICENSE</licenseUrl>
+        <projectUrl>https://git.teknik.io/Uncled1023/IRCSharp</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A full fledged IRC library written in C#.  Allows connecting to a server and sending commands and receiving messages through a simple event driven system.</description>
+        <summary>A c# library for interacting with an IRC server</summary>
+        <language />
+        <releaseNotes>Removed Dependencies</releaseNotes>
+    </metadata>
+</package>
