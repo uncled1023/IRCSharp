@@ -13,6 +13,16 @@ namespace IRCSharp.Commanding
         }
     }
 
+    public class RawCommand : ICommand
+    {
+        public string Message { get; set; }
+
+        public RawCommand()
+        {
+            Message = string.Empty;
+        }
+    }
+
     public class PrivateMessageCommand : ICommand
     {
         public string Recipient { get; set; }

@@ -8,6 +8,7 @@ namespace IRCSharp.Commanding
 {
     public class Commands
     {
+        public event EventHandler<RawCommand> RawCommandEvent;
         public event EventHandler<PrivateMessageCommand> PrivateMessageCommandEvent;
         public event EventHandler<PrivateNoticeCommand> PrivateNoticeCommandEvent;
         public event EventHandler<CTCPMessageCommand> CTCPMessageCommandEvent;
@@ -56,6 +57,19 @@ namespace IRCSharp.Commanding
         {
             _IRC = irc;
             MaxMessageLength = maxMessageLength;
+        }
+
+        /// <summary>
+        /// Sends a Nick command to set the nickname
+        /// </summary>
+        /// <param name="nick"></param>
+        public void SendRaw(string message)
+        {
+            _IRC.SendTCPMessage(string.Format("{0}", message));
+            if (RawCommandEvent != null)
+            {
+                RawCommandEvent(this, new RawCommand { Message = message });
+            }
         }
 
         /// <summary>
